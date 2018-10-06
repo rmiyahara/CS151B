@@ -1,0 +1,40 @@
+Ryan Miyahara
+804585999
+10/7/19
+Fall 2018
+CS M151B
+2E
+
+Homework 1 (1.5, 1.6, 1.7, 1.13)
+
+-------
+| 1.5 |
+-------
+a.  Performance = Clock rate / CPI
+
+    Performance P1 = 3 GHz / 1.5 CPI = 2 GI/s
+    Performance P2 = 2.5 GHz / 1.0 CPI = 2.5 GI/s
+    Performance P3 = 4.0 GHz / 2.2 CPI = 1.82 GI/s
+    From this we can see that P2 has the highest performance in instructions per second.
+
+b.  CPU Clock Cycles = CPU Time * Clock Rate
+    Instruction Count = Performance * CPU Time
+
+    CPU Clock Cycles P1 = 10 s * 3 GHz = 30 GCycles
+    Instruction Count P1 = 2 GI/s * 10 s = 20 GI
+     CPU Clock Cycles P2 = 10 s * 2.5 GHz = 25 GCycles
+    Instruction Count P2 = 2.5 GI/s * 10 s = 25 GI
+     CPU Clock Cycles P3 = 10 s * 4.0 GHz = 40 GCycles
+    Instruction Count P3 = 1.82 GI/s * 10 s = 18.18 GI
+
+c.  Clock Rate = Instruction Count * CPI / CPU Time
+
+    New Clock Rate P1 = 20 GI * 1.2 * 1.5 CPI / 7 s = 5.14 GHz
+    New Clock Rate P2 = 25 GI * 1.2 * 1.0 CPI  / 7 s = 4.29 GHz
+    New Clock Rate P3 = 18.18 GI * 1.2 * 2.2 CPI  / 7 s = 6.86 GHz
+
+
+-------
+| 1.6 |
+-------
+a.  
