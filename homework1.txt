@@ -22,9 +22,9 @@ b.  CPU Clock Cycles = CPU Time * Clock Rate
 
     CPU Clock Cycles P1 = 10 s * 3 GHz = 30 GCycles
     Instruction Count P1 = 2 GI/s * 10 s = 20 GI
-     CPU Clock Cycles P2 = 10 s * 2.5 GHz = 25 GCycles
+    CPU Clock Cycles P2 = 10 s * 2.5 GHz = 25 GCycles
     Instruction Count P2 = 2.5 GI/s * 10 s = 25 GI
-     CPU Clock Cycles P3 = 10 s * 4.0 GHz = 40 GCycles
+    CPU Clock Cycles P3 = 10 s * 4.0 GHz = 40 GCycles
     Instruction Count P3 = 1.82 GI/s * 10 s = 18.18 GI
 
 c.  Clock Rate = Instruction Count * CPI / CPU Time
@@ -37,4 +37,9 @@ c.  Clock Rate = Instruction Count * CPI / CPU Time
 -------
 | 1.6 |
 -------
-a.  
+a.  Global CPI = 
+
+b.  Clock Cycles = Summation (CPI * Instruction Count)
+
+    Clock Cycles P1 = (1 * 10% * 1.0 MI) + (2 * 20% * 1.0 MI) + (3 * 50% * 1.0 MI) + (3 * 20% * 1.0 MI) = 2.6 MCycles
+    Clock Cycles P2 = (2 * 10% * 1.0 MI) + (2 * 20% * 1.0 MI) + (2 * 50% * 1.0 MI) + (2 * 20% * 1.0 MI)
