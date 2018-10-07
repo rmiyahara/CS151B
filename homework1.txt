@@ -37,9 +37,59 @@ c.  Clock Rate = Instruction Count * CPI / CPU Time
 -------
 | 1.6 |
 -------
-a.  Global CPI = 
+a.  Global CPI = Summation (CPI * Instruction Division)
+
+    Global CPI P1 = (1 CPI * 10%) + (2 CPI * 20%) + (3 CPI * 50%) + (3 CPI * 20%) = 2.6 CPI
+    Global CPI P2 = (2 CPI * 10%) + (2 CPI * 20%) + (2 CPI * 50%) + (2 CPI * 20%) = 2.0 CPI
 
 b.  Clock Cycles = Summation (CPI * Instruction Count)
 
     Clock Cycles P1 = (1 * 10% * 1.0 MI) + (2 * 20% * 1.0 MI) + (3 * 50% * 1.0 MI) + (3 * 20% * 1.0 MI) = 2.6 MCycles
-    Clock Cycles P2 = (2 * 10% * 1.0 MI) + (2 * 20% * 1.0 MI) + (2 * 50% * 1.0 MI) + (2 * 20% * 1.0 MI)
+    Clock Cycles P2 = (2 * 10% * 1.0 MI) + (2 * 20% * 1.0 MI) + (2 * 50% * 1.0 MI) + (2 * 20% * 1.0 MI) = 2.0 MCycles
+
+-------
+| 1.7 |
+-------
+a.  CPI = CPU Time / (Instruction Count * Clock Cycle Time)
+
+    CPI A = 1.1 s / (1.0 GI * 1 ns) = 1.1 CPI
+    CPI B = 1.5 s / (1.2 GI * 1 ns) = 1.25 CPI
+
+b.  Clock Rate = Instruction Count * CPI / CPU Time
+
+    Clock Rate A = 1.0 GI * 1.1 CPI / CPU Time = 1.1 GCycles / CPU Time
+    Clock Rate B = 1.2 GI * 1.25 CPI / CPU Time = 1.5 GCycles / CPU Time
+    Clock Rate B / Clock Rate A = (1.5 GCycles / CPU Time) / (1.1 GCycles / CPU Time) = 1.36 times faster
+
+c.  CPU Time = Instruction Count * CPI * Clock Cycle Time
+
+    CPU Time A / CPU Time New = Instruction Count A * CPI A * Clock Cycle Time / (Instruction Count New * CPI New * Clock Cycle Time)
+    CPU Time A / CPU Time New = (Instruction Count A * CPI A) / (Instruction Count New * CPI New)
+    CPU Time A / CPU Time New = (1.0 GI * 1.1 CPI) / (0.6 GI * 1.1 CPI) = 1.7 times speed up
+
+    CPU Time B / CPU Time New = Instruction Count B * CPI B * Clock Cycle Time / (Instruction Count New * CPI New * Clock Cycle Time)
+    CPU Time B / CPU Time New = (Instruction Count B * CPI B) / (Instruction Count New * CPI New)
+    CPU Time b / CPU Time New = (1.2 GI * 1.25 CPI) / (0.6 GI * 1.1 CPI) = 2.27 times speed up
+
+--------
+| 1.13 |
+--------
+1.13.1. Time Improved = (Time Affected / Improvement Factor) + Time Unaffected
+
+        Time Improved = (70 s * 0.8) + (250 s - 70 s) = 236 s = 5.6% speed up
+
+1.13.2. Time Improved = (Time Affected / Improvement Factor) + Time Unaffected
+
+        (250 * 0.8) = (55 s / Improvement Factor) + (250 s - 55 s)
+        5 s = (55 s / Improvement Factor)
+        Improvement Factor = 11
+        Time reduced by 50 s
+
+
+1.13.3. Time Improved = (Time Affected / Improvement Factor) + Time Unaffected
+
+        (250 s * 0.8) = (40 s / Improvement Factor) + (250 s - 40 s)
+        200 s = (40 s / Improvement Factor) + (210 s)
+        -10 s = (40 s / Improvement Factor)
+        Improvement Factor = -4
+        There is no improvement factor which could reduce the whole program by 20% if only branch instructions were reduced.
